@@ -33,6 +33,24 @@ public class Main {
         for(String word : stringList) {
             System.out.println("Original string - " + word + " ||| Stat by current string - " + printCharWithFreq(word));
         }
+
+        System.out.println("\n");
+
+        // Searching substring in list
+        String substringToSearch = "test";
+        for(String word : stringList) {
+            if (searchingInString(word, substringToSearch) != -1) {
+                System.out.println("Found <" + substringToSearch + "> in <"  + word + ">");
+            }
+            else {
+                System.out.println( substringToSearch + " was not found in <"  + word + "> :((((( ");
+            }
+        }
+    }
+
+    // Search substring
+    static Integer searchingInString(String whereToSearch, String whatToSearch) {
+        return whereToSearch.lastIndexOf(whatToSearch);
     }
 
     // reverse string method
